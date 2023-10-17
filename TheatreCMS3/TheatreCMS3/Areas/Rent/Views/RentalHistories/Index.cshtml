@@ -1,0 +1,39 @@
+﻿@model IEnumerable<TheatreCMS3.Areas.Rent.Models.RentalHistory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2 class="text-center p-3">Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="table-container">
+    <div class="row pt-1 pb-1">
+        <div class="pl-4 mr-auto my-auto col-xs-4 text-dark">
+            Most recent Rental Histories
+        </div>
+        <div class="col-xs-4 dropdown pr-4 my-auto ml-auto">
+            <div class="dropdown">
+                <button id="rental-history-dropdown" class="btn btn-outline-secondary dropdown-toggle h-80" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sort By:
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <button class="dropdown-item" onclick="noSorting()">No Extra Sorting...</button>
+                    <button class="dropdown-item" onclick="damagedRentals()">Damaged Rentals</button>
+                    <button class="dropdown-item" onclick="undamagedRentals()">Undamaged Rentals</button>
+                    <button class="dropdown-item" onclick="rentalsAZ()">Rentals A-Z</button>
+                    <button class="dropdown-item" onclick="rentalsZA()">Rentals Z-A</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <table id="rental-list"></table>
+
+
+</div>

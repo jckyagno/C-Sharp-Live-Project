@@ -1,0 +1,80 @@
+﻿@model TheatreCMS3.Areas.Blog.Models.BlogAuthor
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="/TheatreCMS3/Scripts/Areas/Blog.js"></script>
+
+<div class="container mt-5">
+    <!-- DETAILS BUTTON SECTION -->
+    <div>
+        <div class="details-container-top text-dark mx-auto">
+            <div class="text-center details-btn-container">
+                <button onclick="toggleContent('info')" class="btn btn-secondary mr-2 text-nowrap">Author Details</button>
+                <button onclick="toggleContent('blog')" class="btn btn-secondary text-nowrap">Blog Posts</button>
+            </div>
+        </div>
+    </div>
+    <!-- END DETAILS BUTTON SECTION -->
+    
+    <!-- DETAILS INFO SECTION -->
+    <div class="details-container-bot text-dark mx-0">
+        <!-- AUTHOR IMAGE -->
+        <div>
+            <img class="author-img" src="~/Content/images/chromatic-studio.jpg" alt="artist chromatic-studio">
+        </div>
+        <!-- END AUTHOR IMAGE -->
+
+        <!-- CONTENT AREA -->
+        <div id="content-area" class="pl-3 m-0">
+            <div id="blog" class="content" style="display: none;">
+                <p>content 1</p>
+            </div>
+            <div id="test" class="content" style="display: none;">
+                <p>content 2</p>
+            </div>
+            <div id="info" class="content">
+                <!-- AUTHOR NAME -->
+                <div class="row">
+                    <h2 class="ml-3">@Html.DisplayFor(model => model.Name)</h2>
+                    <div class="ml-auto">
+                        <a class="" href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook social-icon"></i></a>
+                        <a class="" href="https://www.facebook.com/"><i class="fa-brands fa-instagram social-icon"></i></a>
+                    </div>
+                </div>
+                <!-- AUTHOR BIO -->
+                <p>@Html.DisplayFor(model => model.Bio)</p>
+
+                <div class="events-container">
+                    <div class="mr-3">
+                        <strong>@Html.DisplayNameFor(model => model.Joined)</strong> <br>
+                        @Html.DisplayFor(model => model.Joined)
+                    </div>
+                    <div class="">
+                        <strong>@Html.DisplayNameFor(model => model.Left)</strong> <br>
+                        @Html.DisplayFor(model => model.Left)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END CONTENT AREA -->
+    </div>
+    <!-- END DETAILS INFO SECTION -->
+    <div class="mx-0 my-2 row">
+        <div class="btn btn-secondary mr-2">
+            <i class="fa-solid fa-pen-to-square"></i>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.BlogAuthorId }, htmlAttributes: new { @class = "text-white" })
+        </div>
+        <div class="btn btn-success">
+            <i class="fa-solid fa-circle-left"></i>
+            @Html.ActionLink("Back to List", "Index", null, htmlAttributes: new { @class = "text-white" })
+        </div>
+        <div class="ml-auto">
+            <a href=@Url.Action("Delete", new { id = Model.BlogAuthorId }) class="btn btn-danger"><i class="fa-solid fa-trash-can text-white"></i></a>
+        </div>
+    </div>
+</div>
+
+

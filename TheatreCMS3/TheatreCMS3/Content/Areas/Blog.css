@@ -1,0 +1,105 @@
+﻿/* ▼ This ▼ is for you to easily reference the colors on the Site.css page */
+/* Do not uncomment these color variables */
+
+/* CSS color variables */
+/*:root { /* Color palette for css */
+/* --main-color: #BD1A11;  Red */
+/*--main-color--light: #F04D44;*/ /* Red, a shade lighter */
+/*--secondary-color: #D6972A;*/ /* Yellow gold */
+/*--light-color: #FFFBFB;*/ /* White */
+/*--dark-color: #000000;*/ /* Black */
+/*--secondary-color--dark: #9D7C39;*/ /* Dark Gold */
+/*}*/
+
+.blog-form {
+    margin-top: 50px;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.details-container-top {
+    background-color: var(--light-color);
+    border-radius: 5px 5px 0px 0px;
+    max-width: min-content;
+    padding: 10px 10px 0px 10px;
+}
+
+.details-container-bot {
+    display: flex;
+    display: -webkit-box;
+    background-color: var(--light-color);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.details-btn-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#content-area {
+    width: 100%;
+    padding-right: 150px;
+}
+
+.author-card-partial {
+    margin-bottom: 10px; 
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.author-name {
+    display: flex;
+    width: 100%;
+}
+
+.card-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.card-info {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+}
+
+.card-events-container {
+    width: 100%;
+    display: flex;
+    margin-top: auto;
+}
+
+.date-box {
+    min-width: 165px; /* fix for: if the date is to short the edit/delete buttons are pushed over */
+}
+
+.author-card-buttons {
+    display: flex;
+    width: 63%; /* fix for odd expand behavior. if width == 100% it expands outside of its parent */
+    justify-content: end;
+    align-content: end;
+}
+
+.content {
+    margin: 0;
+}
+
+.social-icon {
+    font-size: 30px;
+    color: var(--dark-color);
+}
+
+.author-img {
+    max-width: 130px;
+}
+
+.events-container {
+    display: flex;
+    display: -webkit-box;
+    margin: 0;
+}

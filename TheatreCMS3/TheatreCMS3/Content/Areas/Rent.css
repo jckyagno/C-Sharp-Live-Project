@@ -1,0 +1,180 @@
+﻿/* ▼ This ▼ is for you to easily reference the colors on the Site.css page */
+/* Do not uncomment these color variables */
+
+/* CSS color variables */
+/*:root {*/ /* Color palette for css */
+/*--main-color: #BD1A11;*/ /* Red */
+/*--main-color--light: #F04D44;*/ /* Red, a shade lighter */
+/*--secondary-color: #D6972A;*/ /* Yellow gold */
+/*--light-color: #FFFBFB;*/ /* White */
+/*--dark-color: #000000;*/ /* Black */
+/*--secondary-color--dark: #9D7C39;*/ /* Dark Gold */
+/*}*/
+
+#rentalhist-form-horizontal {
+    background-color: #BD1A11;
+    max-width: 600px;
+    margin: 2% auto;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size:x-large;
+}
+
+
+#check {
+    width: 20px;
+    height: 20px;
+}
+
+
+.red {
+    color:red;
+}
+
+.gray {
+    color:gray;
+}
+
+
+.table-container {
+    border-radius: 15px;
+    border: 2px solid #BD1A11;
+    background-color: white;
+}
+
+
+.text-single-line {
+    max-width: 90%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border: 0;
+    border-collapse: collapse;
+}
+
+
+.last-td .dropdown{
+    display: none;
+}
+
+tr:hover .last-td .dropdown {
+    display: block;
+}
+#img-denied {
+    padding-top: 3%;
+    max-width: 100px;
+    height: auto;
+    margin: 0px auto;
+}
+
+#center-login-link {
+    text-align:center;
+}
+
+#create-rental-history-form {
+    border-radius: 15px;
+    max-width: 600px;
+    margin: auto;
+}
+
+#create-rental-history-form-btn {
+    border-radius: 10px;
+    background-color: green;
+}
+
+
+
+/*-----Styling for Rent/RentalHistories/Index.cshtml-----*/
+th {
+    color: black;
+}
+td {
+    color: black;
+    word-wrap: break-word;
+}
+tr {
+}
+
+tr.bordered {
+    border-bottom: 1px solid lightgrey;
+    width: 50%;
+}
+
+.card {
+    border-radius:12px;
+    background-color: none;
+    border-color: none;
+}
+
+.card-header:hover #rental-history-ellipses-dropdown {
+    display: inline;
+}
+
+#item-name {
+    font-weight: bold;
+    font-size: medium;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 200px;
+}
+
+#most-recent-rental-histories {
+    color: black;
+    padding: 10px 0px 0px 10px
+}
+
+#rental-history-dropdown {
+    background-color: none;
+}
+
+/*-----Checkbox Font Replacement-----*/
+
+.fancy-checkbox {
+    border: none;
+    background-color: #f7f7f7;
+    color: none;
+}
+
+.fancy-checkbox input[type="checkbox"],
+.fancy-checkbox .checked {
+    display: none;
+}
+
+.fancy-checkbox input[type="checkbox"]:checked ~ .checked {
+    display: inline-block;
+}
+
+.fancy-checkbox input[type="checkbox"]:checked ~ .unchecked {
+    display: none;
+}
+
+input[type=checkbox]:checked + #item-notes {
+    color: red;
+}
+
+/*-----End of Checkbox Font Replacement-----*/
+
+#rental-history-ellipses-dropdown {
+    display: none;
+    background-color: #343a40;
+    border: none;
+    z-index: 100;
+    font-size: xx-small;
+    padding-top: 2px;
+}
+
+#rental-history-ellipses-dropdown::after {
+    content: none;
+}
+
+#delete-button {
+    color: #BD1A11;
+}
+
+/*-----End of Styling for Rent/RentalHistories/Index.cshtml-----*/

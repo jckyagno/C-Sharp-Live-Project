@@ -1,0 +1,64 @@
+﻿@model TheatreCMS3.Models.DonateModel
+@{
+    ViewBag.Title = "Consider Making a Donation";
+}
+
+<h2 id="donation-title" class="text-center cms-text-light p-3">@ViewBag.Title</h2>
+
+
+<body id="donation-background" >
+    <form>
+        <div id="donation-form-container" class="form-group cms-bg-main-light">
+            <div class="row pl-3 pr-5 pt-5 pb-1">
+                <div class="col-xl-4">
+                    <label>Name*</label>
+                </div>
+                <div class="col-lg p-1">
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", placeholder = "First Name" })
+                </div>
+                <div class="col-lg p-1">
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", placeholder = "Last Name" })
+                </div>
+            </div>
+            <div class="row pl-3 pr-5 pb-1">
+                <div class="col-xl-4">
+                    <label>Email Address*</label>
+                </div>
+                <div class="col-md p-1">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email Address" })
+                </div>
+            </div>
+            <div class="row pl-3 pr-5 pb-1">
+                <div class="col-xl-4">
+                    <label>Address</label>
+                </div>
+                <div class="col-md p-1">
+                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control", placeholder = "Address" })
+                </div>
+            </div>
+            <div class="row pl-3 pr-5 pb-1">
+                <div class="col-xl-4">
+                    <label>Donation Amount($)*</label>
+                </div>
+                <div class="col-md p-1">
+                    @Html.TextBoxFor(m => m.DonationAmount, new { @class = "form-control", placeholder = "Donation Amount" })
+                </div>
+            </div>
+            <div class="row pl-3 pr-5 pb-1">
+                <div class="col-xl-4">
+                    <label>Donation Comments</label>
+                </div>
+                <div class="col-md p-1">
+                    <textarea class="form-control" id="donation-comment-box" rows="5" placeholder="Place comments here..."></textarea>
+                </div>
+            </div>
+            <div class="row pl-3 pr-5 pt-5 pb-1">
+                <div class="col-md-10 pb-3">
+                    <input type="submit" class="btn btn-light" value="Submit" />
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+

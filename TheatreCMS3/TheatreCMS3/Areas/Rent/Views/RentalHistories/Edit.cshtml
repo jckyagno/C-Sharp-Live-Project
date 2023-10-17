@@ -1,0 +1,84 @@
+﻿@model TheatreCMS3.Areas.Rent.Models.RentalHistory
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2 class="text-center p-3">Edit Rental History</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div id="create-rental-history-form" class="form-horizontal cms-bg-main-light p-1 pt-3">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.RentalHistoryId)
+
+        <div class="row">
+            <div class="form-group col">
+                <!--Rental-->
+                <p class="font-weight-bold">
+                    @Html.LabelFor(model => model.Rental, htmlAttributes: new { @class = "control-label col-md-2" })
+                </p>
+                <!--Rental Text Box-->
+                <div class="col">
+                    @Html.EditorFor(model => model.Rental, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Rental, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col">
+                <!--Damaged-->
+                <p class="font-weight-bold">
+                    Damaged?
+                </p>
+                <!--Damaged? Checkbox-->
+                <div id="damaged-checkbox" class="pt-3" onclick="changeDamagedToNotes()">
+                    @Html.EditorFor(model => model.RentalDamaged)
+                    @Html.ValidationMessageFor(model => model.RentalDamaged, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="form-group col">
+                <!--Damages Incurred / Notes-->
+                <p id="damages-incurred" class="col font-weight-bold">
+                    Damages Incurred
+                </p>
+                <p id="notes" class="col font-weight-bold">
+                    Notes
+                </p>
+                <!--Damages Incurred / Notes Textbox-->
+                <div class="col-md">
+                    @Html.EditorFor(model => model.DamagesIncurred, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DamagesIncurred, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group row justify-content-center">
+            <!--Back to List Button-->
+            <div class="col-md-offset-1 pr-1">
+                <input class="btn btn-dark" type="button" value="Back to List" onclick="window.location.href='@Url.Action("RentalHistories", ".")';" />
+            </div>
+            <div class="col-md-offset-1">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </div>
+</div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

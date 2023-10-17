@@ -1,0 +1,79 @@
+﻿@{
+  ViewBag.Title = "Contact";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .body-content
+    {
+        width: 100%;
+        margin: 0;
+        padding: 0px;
+        max-width: 100%;
+    }
+    footer
+    {
+        background-color: #f04d44;
+    }
+
+
+</style>
+
+<div id="contact-us-container-div">
+
+    <div id="contact-us-title-section">
+        <center><h2>Contact Us</h2></center>
+    </div>
+
+
+
+    <div id="contact-us-page-body">
+
+        <center><h4>G<u id="contact-page-title-underline">ET IN TOUC</u>H</h4></center>
+
+        <div class="row">
+            <div class="col-md-8 p-3">
+                <form id="contact-us-form">
+                    <div class="form-group">
+                        <label for="fname">First & Last Name *</label>
+                        <input type="text" class="form-control" id="fullname" name="fullname">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="text" class="form-control" id="email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" class="form-control" id="subject" name="subject">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea class="form-control" id="message" name="message" style="height:200px"></textarea>
+                    </div>
+
+                    <input type="submit" id="contact-page-button" class="btn w-100 btn-large btn-primary" value="Submit">
+                </form>
+            </div>
+
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-6">
+                        <div id="contact-us-side-section">
+                            <h4>Donate</h4>
+                            <p>We've got a Patreon account!  Help support live theatre in Portland, OR. by becoming a Patron today!</p>
+                            <button id="contact-page-button" class="btn w-100 btn-primary">Donate</button>
+                        </div>
+                        <div id="contact-us-side-section">
+                            <h4>Volunteer</h4>
+                            <p>Lorem ipsum dolor slt amet, consectetur adipiscing elit, sed do elumod tempor incididunt ut labore et dolore magna.</p>
+                            <button id="contact-page-button" class="btn w-100 btn-primary">Volunteer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

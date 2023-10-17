@@ -1,0 +1,43 @@
+﻿@model TheatreCMS3.Areas.Blog.Models.BlogAuthor
+
+<!-- CONTENT AREA -->
+<div class="author-card-partial" id="@Model.BlogAuthorId">
+    <div class="card-content">
+        <!-- AUTHOR IMAGE -->
+        <div>
+            <img class="author-img" src="~/Content/images/chromatic-studio.jpg" alt="artist chromatic-studio">
+        </div>
+        <!-- END AUTHOR IMAGE -->
+        <div class="card-info">
+            <!-- AUTHOR NAME -->
+            <div class="author-name">
+                <h2 class="">@Html.DisplayFor(model => model.Name)</h2>
+                <div class="ml-auto">
+                    <a class="" href="https://www.facebook.com/"><i class="fa-brands fa-square-facebook social-icon"></i></a>
+                    <a class="" href="https://www.facebook.com/"><i class="fa-brands fa-instagram social-icon"></i></a>
+                </div>
+            </div>
+            <!-- AUTHOR BIO -->
+            <p>@Html.DisplayFor(model => model.Bio)</p>
+            <div class="card-events-container">
+                <div class="date-box mr-3">
+                    <strong>@Html.DisplayNameFor(model => model.Joined)</strong> <br>
+                    @Html.DisplayFor(model => model.Joined)
+                </div>
+                <div class="date-box">
+                    <strong>@Html.DisplayNameFor(model => model.Left)</strong> <br>
+                    @Html.DisplayFor(model => model.Left)
+                </div>
+                <div class="author-card-buttons">
+                    <div class="mr-2">
+                        <a href=@Url.Action("Edit", new { id = Model.BlogAuthorId }) class="btn btn-success"><i class="fa-solid fa-pen-to-square text-white"></i> Edit</a>
+                    </div>
+                    <div class="">
+                        <button id="deleteAuthorButton" class="btn btn-danger" onclick="ConfirmDelete('@Model.BlogAuthorId', '@Model.Name')"><i class="fa-solid fa-trash-can text-white"></i> Delete Author</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END CONTENT AREA -->

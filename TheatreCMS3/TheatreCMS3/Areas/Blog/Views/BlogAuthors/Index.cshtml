@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TheatreCMS3.Areas.Blog.Models.BlogAuthor>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<!-- Loop through all entries in BlogAuthor db-->
+@foreach (var item in Model)
+{
+    @Html.Partial("_BlogAuthor", item)
+}
+
+<div class="modal fade" id="ModalPopUp" role="dialog">
+    <div class="modal-dialog" style="">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="DivClose" type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align:center;" id="modal-body-div">
+                Are you sure you want to remove <span id="author-name"></span>
+                <span hidden id="authorId"></span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="deleteAuthorConfirmButton" type="button" class="btn btn-danger" style="display: none;">Confirm Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
